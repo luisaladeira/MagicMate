@@ -36,8 +36,9 @@ class ThemeParks:
         infos_list = []
         
         for entity in entity_list:
+            print(f'Buscando dados de: {entity}')
             entity = self.session.get(route + entity)
-            infos_list.append(entity)
+            infos_list.append(entity.json())
         
         return infos_list
     
